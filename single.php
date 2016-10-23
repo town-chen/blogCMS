@@ -60,11 +60,26 @@
 
             <div class="comment">
               <div class="comment-head">
+                <a href="#">Town Chen</a><button class="btn btn-info btn-xs">Admin</button>
+                <img width="50" height="50" src="img/original.jpg" />
+              </div>
+              This is a comment of town ,to test our website.
+            </div>
+            <div class="comment">
+              <div class="comment-head">
                 <a href="#">Town Chen</a>
                 <img width="50" height="50" src="img/original.jpg" />
-                This is a comment of town ,to test our website.
               </div>
+              This is a comment of town ,to test our website.
             </div>
+            <div class="comment">
+              <div class="comment-head">
+                <a href="#">Town Chen</a>
+                <img width="50" height="50" src="img/original.jpg" />
+              </div>
+              This is a comment of town ,to test our website.
+            </div>
+
           </div>
 
         </div><!-- /.blog-main -->
