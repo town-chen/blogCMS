@@ -6,4 +6,5 @@
   define("DB_NAME", "blogcms");
 
   $about_text = "Town sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.";
+  $page_title = "Home | BlogCMS";
  ?>

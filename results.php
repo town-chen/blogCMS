@@ -1,4 +1,12 @@
-<?php include("includes/header.php");
+<?php
+include("includes/config.php");
+include("includes/db.php");
+
+if(isset($_GET['search'])) {
+  $page_title = "Search Results for \"" . $_GET['search'] ."\"";
+}
+
+include("includes/header.php");
 if(isset($_GET['search'])) {
   $keyword = mysqli_real_escape_string($db, $_GET['search']);
   $query = "SELECT * FROM posts WHERE keywords LIKE '%$keyword%'";

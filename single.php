@@ -1,4 +1,17 @@
-<?php include("includes/header.php");
+<?php
+include("includes/config.php");
+include("includes/db.php");
+
+if(isset($_GET['post'])) {
+  $post = mysqli_real_escape_string($db, $_GET['post']);
+
+  $p = $db->query("SELECT * FROM posts WHERE id='$post'");
+  $p1 = $p->fetch_assoc();
+
+  $page_title = $p1['title'];
+}
+
+include("includes/header.php");
 if(isset($_GET['post'])) {
   $id = mysqli_real_escape_string($db, $_GET['post']);
   $query = "SELECT * FROM posts WHERE id='$id'";
