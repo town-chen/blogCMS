@@ -19,6 +19,14 @@
   <div class="sidebar-module">
     <h4>Subscribe</h4>
     <hr>
+    <?php if(isset($_POST['subscribe']))  {
+      $name = mysqli_real_escape_string($db, $_POST['name']);
+      $email = mysqli_real_escape_string($db, $_POST['email']);
+
+      $query = "INSERT INTO subscribers (name,email) VALUES('$name','$email')";
+      $db->query($query);
+    }
+    ?>
     <form method="post">
       <div class="form-group">
         <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Name">
@@ -26,7 +34,7 @@
       <div class="form-group">
         <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
       </div>
-      <button type="submit" class="btn btn-primary">Subscribe</button>
+      <button type="submit" name="subscribe" class="btn btn-primary">Subscribe</button>
     </form>
   </div>
 
