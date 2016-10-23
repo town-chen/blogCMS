@@ -35,6 +35,38 @@
             <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
           </div><!-- /.blog-post -->
 
+          <blockquote>2 Comments</blockquote>
+
+          <div class="comment-area">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputName">Name</label>
+                <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Website</label>
+                <input type="text" name="website" class="form-control" id="exampleInputEmail1" placeholder="Website(Optional)">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Comment</label>
+                <textarea cols="60" rows="10" name="comment" class="form-control" id="exampleInputPassword1"></textarea>
+              </div>
+              <button type="submit" name="post_comment" class="btn btn-primary">Post Comment</button>
+            </form>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="comment">
+              <div class="comment-head">
+                <a href="#">Town Chen</a>
+                <img width="50" height="50" src="img/original.jpg" />
+                This is a comment of town ,to test our website.
+              </div>
+            </div>
+          </div>
+
         </div><!-- /.blog-main -->
 
         <?php include("includes/sidebar.php"); ?>
