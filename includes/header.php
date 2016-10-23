@@ -2,6 +2,10 @@
   include("includes/config.php");
   include("includes/db.php");
 
+  $query = "SELECT * FROM categories";
+
+  $categories = $db->query($query);
+
  ?>
 
 <!DOCTYPE html>
@@ -42,11 +46,19 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
+          <?php if(isset($_GET['category'])) { ?>
+            <a class="blog-nav-item" href="index.php">Home</a>
+          <?php }else { ?>
           <a class="blog-nav-item active" href="#">Home</a>
-          <a class="blog-nav-item" href="#">PHP</a>
-          <a class="blog-nav-item" href="#">Laravel</a>
-          <a class="blog-nav-item" href="#">Symfony</a>
-          <a class="blog-nav-item" href="#">About</a>
+          <?php } ?>
+          <?php if($categories->num_rows > 0) {
+            while($row = $categories->fetch_assoc()){
+              if(isset($_GET['category']) && $row['id'] == $_GET['category'] ) {
+            ?>
+            <a class="blog-nav-item active" href="index.php?category=<?php echo $row['id']; ?>"><?php echo $row['text']; ?></a>
+            <?php }else { ?>
+              <a class="blog-nav-item" href="index.php?category=<?php echo $row['id']; ?>"><?php echo $row['text']; ?></a>
+          <?php } } } ?>
         </nav>
       </div>
     </div>
