@@ -1,209 +1,257 @@
 <?php
-  include("includes/config.php");
-  include("includes/db.php");
+
 
  ?>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="./favicon.ico">
 
-    <title>BlogCMS</title>
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+     <meta name="description" content="">
+     <meta name="author" content="">
+     <link rel="icon" href="../../favicon.ico">
 
-    <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
+     <title>Dashboard</title>
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+     <!-- Bootstrap core CSS -->
+     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="./css/blog.css" rel="stylesheet">
+     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="./js/ie-emulation-modes-warning.js"></script>
+     <!-- Custom styles for this template -->
+     <link href="css/dashboard.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+     <script src="js/ie-emulation-modes-warning.js"></script>
 
-  <body>
+     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+     <!--[if lt IE 9]>
+       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+     <![endif]-->
+   </head>
 
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
-          <a class="blog-nav-item" href="#">PHP</a>
-          <a class="blog-nav-item" href="#">Laravel</a>
-          <a class="blog-nav-item" href="#">Symfony</a>
-          <a class="blog-nav-item" href="#">About</a>
-        </nav>
-      </div>
-    </div>
+   <body>
 
-    <div class="container">
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="#">Project name</a>
+         </div>
+         <div id="navbar" class="navbar-collapse collapse">
+           <ul class="nav navbar-nav navbar-right">
+             <li><a href="#">Dashboard</a></li>
+             <li><a href="#">Settings</a></li>
+             <li><a href="#">Profile</a></li>
+             <li><a href="#">Help</a></li>
+           </ul>
+           <form class="navbar-form navbar-right">
+             <input type="text" class="form-control" placeholder="Search...">
+           </form>
+         </div>
+       </div>
+     </nav>
 
-      <div class="blog-header">
-        <h1 class="blog-title">BlogCMS</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
-      </div>
+     <div class="container-fluid">
+       <div class="row">
+         <div class="col-sm-3 col-md-2 sidebar">
+           <ul class="nav nav-sidebar">
+             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+             <li><a href="#">Reports</a></li>
+             <li><a href="#">Analytics</a></li>
+             <li><a href="#">Export</a></li>
+           </ul>
+           <ul class="nav nav-sidebar">
+             <li><a href="">Nav item</a></li>
+             <li><a href="">Nav item again</a></li>
+             <li><a href="">One more nav</a></li>
+             <li><a href="">Another nav item</a></li>
+             <li><a href="">More navigation</a></li>
+           </ul>
+           <ul class="nav nav-sidebar">
+             <li><a href="">Nav item again</a></li>
+             <li><a href="">One more nav</a></li>
+             <li><a href="">Another nav item</a></li>
+           </ul>
+         </div>
+         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+           <h1 class="page-header">Dashboard</h1>
 
-      <div class="row">
+           <div class="row placeholders">
+             <div class="col-xs-6 col-sm-3 placeholder">
+               <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+               <h4>Label</h4>
+               <span class="text-muted">Something else</span>
+             </div>
+             <div class="col-xs-6 col-sm-3 placeholder">
+               <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+               <h4>Label</h4>
+               <span class="text-muted">Something else</span>
+             </div>
+             <div class="col-xs-6 col-sm-3 placeholder">
+               <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+               <h4>Label</h4>
+               <span class="text-muted">Something else</span>
+             </div>
+             <div class="col-xs-6 col-sm-3 placeholder">
+               <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+               <h4>Label</h4>
+               <span class="text-muted">Something else</span>
+             </div>
+           </div>
 
-        <div class="col-sm-8 blog-main">
+           <h2 class="sub-header">Section title</h2>
+           <div class="table-responsive">
+             <table class="table table-striped">
+               <thead>
+                 <tr>
+                   <th>#</th>
+                   <th>Header</th>
+                   <th>Header</th>
+                   <th>Header</th>
+                   <th>Header</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   <td>1,001</td>
+                   <td>Lorem</td>
+                   <td>ipsum</td>
+                   <td>dolor</td>
+                   <td>sit</td>
+                 </tr>
+                 <tr>
+                   <td>1,002</td>
+                   <td>amet</td>
+                   <td>consectetur</td>
+                   <td>adipiscing</td>
+                   <td>elit</td>
+                 </tr>
+                 <tr>
+                   <td>1,003</td>
+                   <td>Integer</td>
+                   <td>nec</td>
+                   <td>odio</td>
+                   <td>Praesent</td>
+                 </tr>
+                 <tr>
+                   <td>1,003</td>
+                   <td>libero</td>
+                   <td>Sed</td>
+                   <td>cursus</td>
+                   <td>ante</td>
+                 </tr>
+                 <tr>
+                   <td>1,004</td>
+                   <td>dapibus</td>
+                   <td>diam</td>
+                   <td>Sed</td>
+                   <td>nisi</td>
+                 </tr>
+                 <tr>
+                   <td>1,005</td>
+                   <td>Nulla</td>
+                   <td>quis</td>
+                   <td>sem</td>
+                   <td>at</td>
+                 </tr>
+                 <tr>
+                   <td>1,006</td>
+                   <td>nibh</td>
+                   <td>elementum</td>
+                   <td>imperdiet</td>
+                   <td>Duis</td>
+                 </tr>
+                 <tr>
+                   <td>1,007</td>
+                   <td>sagittis</td>
+                   <td>ipsum</td>
+                   <td>Praesent</td>
+                   <td>mauris</td>
+                 </tr>
+                 <tr>
+                   <td>1,008</td>
+                   <td>Fusce</td>
+                   <td>nec</td>
+                   <td>tellus</td>
+                   <td>sed</td>
+                 </tr>
+                 <tr>
+                   <td>1,009</td>
+                   <td>augue</td>
+                   <td>semper</td>
+                   <td>porta</td>
+                   <td>Mauris</td>
+                 </tr>
+                 <tr>
+                   <td>1,010</td>
+                   <td>massa</td>
+                   <td>Vestibulum</td>
+                   <td>lacinia</td>
+                   <td>arcu</td>
+                 </tr>
+                 <tr>
+                   <td>1,011</td>
+                   <td>eget</td>
+                   <td>nulla</td>
+                   <td>Class</td>
+                   <td>aptent</td>
+                 </tr>
+                 <tr>
+                   <td>1,012</td>
+                   <td>taciti</td>
+                   <td>sociosqu</td>
+                   <td>ad</td>
+                   <td>litora</td>
+                 </tr>
+                 <tr>
+                   <td>1,013</td>
+                   <td>torquent</td>
+                   <td>per</td>
+                   <td>conubia</td>
+                   <td>nostra</td>
+                 </tr>
+                 <tr>
+                   <td>1,014</td>
+                   <td>per</td>
+                   <td>inceptos</td>
+                   <td>himenaeos</td>
+                   <td>Curabitur</td>
+                 </tr>
+                 <tr>
+                   <td>1,015</td>
+                   <td>sodales</td>
+                   <td>ligula</td>
+                   <td>in</td>
+                   <td>libero</td>
+                 </tr>
+               </tbody>
+             </table>
+           </div>
+         </div>
+       </div>
+     </div>
 
-          <div class="blog-post">
-            <h2 class="blog-post-title">Sample blog post</h2>
-            <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-
-            <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-            <hr>
-            <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-            <blockquote>
-              <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            </blockquote>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-            <h2>Heading</h2>
-            <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-            <h3>Sub-heading</h3>
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-            <pre><code>Example code block</code></pre>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-            <h3>Sub-heading</h3>
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <ul>
-              <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-              <li>Donec id elit non mi porta gravida at eget metus.</li>
-              <li>Nulla vitae elit libero, a pharetra augue.</li>
-            </ul>
-            <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-            <ol>
-              <li>Vestibulum id ligula porta felis euismod semper.</li>
-              <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-              <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-            </ol>
-            <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-          </div><!-- /.blog-post -->
-
-          <div class="blog-post">
-            <h2 class="blog-post-title">Another blog post</h2>
-            <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
-
-            <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-            <blockquote>
-              <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            </blockquote>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-            <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-          </div><!-- /.blog-post -->
-
-          <div class="blog-post">
-            <h2 class="blog-post-title">New feature</h2>
-            <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
-
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <ul>
-              <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-              <li>Donec id elit non mi porta gravida at eget metus.</li>
-              <li>Nulla vitae elit libero, a pharetra augue.</li>
-            </ul>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-            <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-          </div><!-- /.blog-post -->
-
-          <nav>
-            <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
-          </nav>
-
-        </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-
-          <div class="sidebar-module">
-            <h4>Search</h4>
-              <form method="get" action="results.php" class="form-inline">
-              <div class="form-group">
-                <input type="text" name="search" class="form-control" id="exampleInputName2" placeholder="Search...">
-              </div>
-            </form>
-          </div>
-
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div>
-
-          <div class="sidebar-module">
-            <h4>Subscribe</h4>
-            <form method="post">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Name">
-              </div>
-              <div class="form-group">
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-              </div>
-              <button type="submit" class="btn btn-primary">Subscribe</button>
-            </form>
-          </div>
-
-          <div class="sidebar-module">
-            <h4>Archives</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-              <li><a href="#">February 2014</a></li>
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-              <li><a href="#">November 2013</a></li>
-              <li><a href="#">October 2013</a></li>
-              <li><a href="#">September 2013</a></li>
-              <li><a href="#">August 2013</a></li>
-              <li><a href="#">July 2013</a></li>
-              <li><a href="#">June 2013</a></li>
-              <li><a href="#">May 2013</a></li>
-              <li><a href="#">April 2013</a></li>
-            </ol>
-          </div>
-          <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
-          </div>
-        </div><!-- /.blog-sidebar -->
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
-
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./js/jquery/1.12.4/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="./js/ie10-viewport-bug-workaround.js"></script>
-  </body>
-</html>
+     <!-- Bootstrap core JavaScript
+     ================================================== -->
+     <!-- Placed at the end of the document so the pages load faster -->
+     <script src="js/jquery/1.12.4/jquery.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+     <script src="js/vendor/holder.min.js"></script>
+     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+     <script src="js/ie10-viewport-bug-workaround.js"></script>
+   </body>
+ </html>
