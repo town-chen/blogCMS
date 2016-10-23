@@ -5,6 +5,30 @@ if(isset($_GET['post'])) {
 }
 
 $posts = $db->query($query);
+
+if(isset($_POST['post_comment'])) {
+  $name = mysqli_real_escape_string($db, $_POST['name']);
+  $comment = mysqli_real_escape_string($db, $_POST['comment']);
+
+  if(isset($_POST['website'])) {
+    $website = mysqli_real_escape_string($db, $_POST['website']);
+  }else {
+    $website = "";
+  }
+
+  $query = "INSERT INTO comments (name,comment,post,website) VALUES ('$name','$comment','$id', '$website')";
+  // if($db->query($query)) {
+  //   echo "<script>alert('Comment Inserted!!')</script>";
+  // }else {
+  //   echo "<script>alert('Comment Not Inserted!!')</script>";
+  // }
+  $db->query($query);
+  header("Location:single.php?post=$id");
+  exit();
+}
+
+$query = "SELECT * FROM comments WHERE post='$id' AND status='1'";
+$comments = $db->query($query);
 ?>
 
         <br>
@@ -20,10 +44,10 @@ $posts = $db->query($query);
         </div><!-- /.blog-post -->
         <?php } } ?>
 
-          <blockquote>2 Comments</blockquote>
+          <blockquote><?php echo $comments->num_rows; ?> Comments</blockquote>
 
           <div class="comment-area">
-            <form>
+            <form method="post">
               <div class="form-group">
                 <label for="exampleInputName">Name</label>
                 <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Name">
@@ -43,27 +67,25 @@ $posts = $db->query($query);
             <br>
             <br>
 
+            <?php while($comment = $comments->fetch_assoc()) {
+              if($comment['is_admin'] != 1) {
+              ?>
             <div class="comment">
               <div class="comment-head">
-                <a href="#">Town Chen</a><button class="btn btn-info btn-xs">Admin</button>
+                <a href="#"><?php echo $comment['name']; ?></a>
                 <img width="50" height="50" src="img/original.jpg" />
               </div>
-              This is a comment of town ,to test our website.
+              <?php echo $comment['comment']; ?>
             </div>
+            <?php }else { ?>
             <div class="comment">
               <div class="comment-head">
-                <a href="#">Town Chen</a>
+                <a href="#"><?php echo $comment['name']; ?></a><button class="btn btn-info btn-xs">Admin</button>
                 <img width="50" height="50" src="img/original.jpg" />
               </div>
-              This is a comment of town ,to test our website.
+              <?php echo $comment['comment']; ?>
             </div>
-            <div class="comment">
-              <div class="comment-head">
-                <a href="#">Town Chen</a>
-                <img width="50" height="50" src="img/original.jpg" />
-              </div>
-              This is a comment of town ,to test our website.
-            </div>
+            <?php } } ?>
 
           </div>
 
