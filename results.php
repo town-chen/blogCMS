@@ -30,15 +30,12 @@ if(isset($_GET['search'])) {
           ?>
           <a href="single.php?post=<?php echo $row['id']; ?>" class="btn btn-primary">Read More</a>
         </div><!-- /.blog-post -->
-        <?php } } ?>
+        <?php } }else {
+          echo "<p>No Matching Posts!!</p>";
+        }
+        ?>
 
 
-          <nav>
-            <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
-          </nav>
 
         </div><!-- /.blog-main -->
 
