@@ -1,5 +1,10 @@
 <?php
+session_start();
 
+if(!isset($_SESSION['email'])) {
+  header("Location:signin.php?err_msg=You need to login to see this page!!");
+  exit();
+}
  ?>
  <!DOCTYPE html>
  <html lang="en">

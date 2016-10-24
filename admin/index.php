@@ -1,6 +1,20 @@
 <?php
+include("includes/config.php");
+include("includes/db.php");
+
 include("includes/header.php");
 include("includes/sidebar.php");
+
+$query = "SELECT * FROM posts ORDER BY id DESC";
+
+$posts = $db->query($query);
+
+$com_query = "SELECT * FROM comments ORDER BY id DESC";
+
+$comments = $db->query($com_query);
+
+$cat_query = "SELECT * FROM categories ORDER BY id DESC";
+$categories = $db->query($cat_query);
 
  ?>
 
@@ -21,12 +35,15 @@ include("includes/sidebar.php");
                  </tr>
                </thead>
                <tbody>
+                 <?php while ($row = $posts->fetch_assoc()) { ?>
                  <tr>
-                   <td>1,001</td>
-                   <td>Lorem</td>
-                   <td>ipsum</td>
-                   <td><a href="#" class="btn btn-warning">Edit</a>  <a href="#" class="btn btn-danger">Delete</a></td>
+                   <td><?php echo $row['date'] ?></td>
+                   <td><?php echo $row['title'] ?></td>
+                   <td><?php echo $row['author'] ?></td>
+                   <td><a href="new_post.php?post=<?php echo $row['id'] ?>" class="btn btn-warning">Edit</a>
+                     <a href="index.php?entity=post&action=delete&id=<?php echo $row['id'] ?>" class="btn btn-danger">Delete</a></td>
                  </tr>
+                 <?php } ?>
 
                </tbody>
              </table>
@@ -43,11 +60,14 @@ include("includes/sidebar.php");
                  </tr>
                </thead>
                <tbody>
+                 <?php while ($com_row = $comments->fetch_assoc()) { ?>
                  <tr>
-                   <td>1,001</td>
-                   <td>Lorem</td>
-                   <td><a href="#" class="btn btn-success">Approve</a>  <a href="#" class="btn btn-danger">Delete</a></td>
+                   <td><?php echo $com_row['name'] ?></td>
+                   <td><?php echo $com_row['comment'] ?></td>
+                   <td><a href="#" class="btn btn-success">Approve</a>
+                     <a href="#" class="btn btn-danger">Delete</a></td>
                  </tr>
+                 <?php } ?>
 
                </tbody>
              </table>
