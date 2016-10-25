@@ -44,6 +44,8 @@ $query = "SELECT * FROM comments WHERE post='$id' AND status='1'";
 $comments = $db->query($query);
 ?>
 
+<div class="row">
+  <div class="col-sm-8 blog-main">
         <br>
 
         <?php if($posts->num_rows > 0) {

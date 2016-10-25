@@ -4,7 +4,7 @@ include("includes/sidebar.php");
 
  ?>
 
-
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
            <h1 class="page-header">Categories</h1>
            <a href="new_category.php" class="btn btn-info btn-lg">Add New</a>
 
@@ -40,9 +40,9 @@ include("includes/sidebar.php");
            </div>
 
 
-         </div>
-       </div>
-     </div>
+         </div>  <!-- end main -->
+       </div> <!-- end row -->
+     </div> <!-- end container -->
 
      <!-- Bootstrap core JavaScript
      ================================================== -->

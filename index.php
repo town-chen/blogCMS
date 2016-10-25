@@ -21,7 +21,8 @@ if(isset($_GET['category'])) {
 
 $posts = $db->query($query);
 ?>
-
+      <div class="row">
+        <div class="col-sm-8 blog-main">
           <div class="blog-header">
             <h1 class="blog-title">BlogCMS</h1>
             <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>

@@ -16,6 +16,8 @@ if(isset($_GET['search'])) {
 }
 
 ?>
+<div class="row">
+  <div class="col-sm-8 blog-main">
         <br>
         <blockquote>Search Result for <?php echo @$_GET['search']; ?></blockquote>
         <?php if($posts->num_rows > 0) {
