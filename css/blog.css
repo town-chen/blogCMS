@@ -173,3 +173,12 @@ h6, .h6 {
   margin: 5px;
   float: left;
 }
+
+.gallery {
+  margin-top: 50px;
+}
+
+.gallery img {
+  max-width: 100px;
+  height: auto;
+}
