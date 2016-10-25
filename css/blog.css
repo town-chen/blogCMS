@@ -174,11 +174,11 @@ h6, .h6 {
   float: left;
 }
 
-.gallery {
-  margin-top: 50px;
+.links {
+  margin-top: 20px;
+  text-align: center;
 }
 
-.gallery img {
+.links img {
   max-width: 100px;
-  height: auto;
 }
